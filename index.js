@@ -13,7 +13,7 @@ function createRequestHandler({ ip }) {
     let requestCounter = 0;
     return (request, response) => {
 	console.log(request.url)
-	response.end(`Simple Server! Total requests: ${requestCounter++}; IP: ${ip}`);
+	response.end(`Simple Server (1.0.1)! Total requests: ${requestCounter++}; IP: ${ip}`);
     };
 }
 

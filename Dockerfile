@@ -4,12 +4,11 @@ FROM centos:7
 RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash -
 RUN yum install -y nodejs
 
-RUN mkdir /app && chown 1000.1000 /app
-USER 1000
-
+RUN mkdir /app
 COPY index.js /app
 COPY package.json /app
 
+USER 1000
 EXPOSE 8080
 WORKDIR /app
 CMD ["npm", "run", "server"]
